@@ -3,7 +3,7 @@
     <div class="container" style="margin: 50px" >
         <div>
             <div class="col-lg-10">
-                <table class="table">
+                <table class="table" style="text-align: center">
                     <thead class="thead-dark">
                       <tr>
                         <tr>
@@ -19,7 +19,7 @@
                         <tr>
                             <td scope="row">{{$loop->iteration}}</td>
                             <td>{{$data->name}}</td>
-                            <td>{{$data->status}}</td>
+                            <td>{{$data->status ? 'Hiện' : 'Ẩn'}}</td>
                             <td>
                                 <a href="{{route('category.edit',$data)}}" class="btn btn-primary">Sửa</a>
 

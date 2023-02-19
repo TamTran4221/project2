@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -13,7 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        return view('admin/product.index', compact('products'),['title'=>'danh sách sản phẩm']);
     }
 
     /**
@@ -23,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $cate = Category::where('status',1)->get();
+        return view('admin/product.add',compact('cate'),['title'=> 'thêm mới sản phẩm']);
     }
 
     /**
@@ -34,7 +38,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        if($request->hasFile('file')){
+            $file = $request->file;
+            $file_name =  $file->getClientOriginalName();
+            $file->move(public_path('uploads'),$file_name);
+            
+        } else {
+            $file_name = '';
+        }
+        $request->merge(['image'=> $file_name]);
+            Product::create($request->all());
+            return redirect()->route('product.index');
+        
     }
 
     /**
@@ -56,7 +72,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::find($id);
+        $cate = Category::where('status',1)->get();
+        return view('admin/product.edit',compact('product','cate'), ['title' =>'Chỉnh Sửa sản phẩm']);
     }
 
     /**
@@ -68,7 +86,24 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $product = Product::find($id);
+        if($request->hasFile('file')){
+            $file = $request->file;
+            $file_name =  $file->getClientOriginalName();
+            $file->move(public_path('uploads'),$file_name);
+            
+        } else {
+            $file_name = $product->image;
+        }
+
+        $request->merge(['image'=> $file_name]);
+        try {
+            $product->update($request->all());
+            return redirect()->route('admin/product.index');
+        } catch (\Throwable $th) {
+            //throw $th;
+            dd($th);
+        }
     }
 
     /**
@@ -79,6 +114,11 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            Product::find($id)->delete();
+            return redirect()->back();
+         } catch (\Throwable $th) {
+             //throw $th;
+         }
     }
 }
