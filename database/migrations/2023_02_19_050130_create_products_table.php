@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 200)->nullable();
             $table->float('price');
-            $table->string('description', 255);
+            $table->longtext('description');
             $table->string('image', 255);
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
