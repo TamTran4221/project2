@@ -2,14 +2,9 @@
 @section('noidung')
     <!-- Left col -->
     <section class="col-lg-12 connectedSortable">
-        <!-- Custom tabs (Charts with tabs)-->
-
-
-
         <!-- content -->
         <div class="row">
             <div class="col-12">
-                
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover w-full">
                             <thead>
@@ -29,7 +24,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->price }}</td>
-                                        <td><img src="{{ url('uploads') }}/{{ $value->image}}" alt="" width="100px"></td>
+                                        <td><img src="{{url('uploads')}}/{{$value->image}}" alt="" width="100px"></td>
                                         <td>{{ $value->description }}</td>
                                         <td>{{ $value->category_id}}</td>
                                         <td>
@@ -49,7 +44,8 @@
 
                             </tbody>
                         </table>
-                        <a href="{{route('product.create')}}" class="btn btn-success">Thêm mới sản phẩm</a>
+                        <a href="{{route('product.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới sản phẩm</a>
+                        {{ $products->links() }}
                     </div>
                     
                

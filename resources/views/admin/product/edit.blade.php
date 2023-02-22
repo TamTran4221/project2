@@ -1,7 +1,7 @@
 @extends('main')
 @section('noidung')
 <div class="card-body">
-    <form action="" method="post">
+    <form method="POST" action="{{route('product.update',$product)}}" enctype= "multipart/form-data">
         @csrf
         @method('PUT')
         <div class="input-group mb-3">

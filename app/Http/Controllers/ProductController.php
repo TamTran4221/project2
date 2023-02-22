@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
         return view('admin/product.index', compact('products'),['title'=>'danh sách sản phẩm']);
     }
 
@@ -38,18 +38,15 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
         if($request->hasFile('file')){
             $file = $request->file;
-            $file_name =  $file->getClientOriginalName();
-            $file->move(public_path('uploads'),$file_name);
-            
-        } else {
-            $file_name = '';
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path('uploads'),$fileName);
+            $request->merge(['image'=>$fileName]);
         }
-        $request->merge(['image'=> $file_name]);
-            Product::create($request->all());
-            return redirect()->route('product.index');
+        $product = Product::create($request->all());
+
+        return redirect()->route('product.index');
         
     }
 

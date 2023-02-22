@@ -33,7 +33,8 @@
                        @endforeach
                     </tbody>
                   </table>
-                  <a href="{{route('category.create')}}" class="btn btn-success">Thêm mới</a>
+                  <a href="{{route('category.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới</a>
+                  {{ $cates->links() }}
             </div>
            
         </div>

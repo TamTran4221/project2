@@ -18,15 +18,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layout.home');
 });
 Route::get('/admin',[LoginController::class,'index'])->name('login');
 Route::post('/admin',[LoginController::class,'store'])->name('login.store');
  #Route::middleware(['auth'])->group(function(){});
  
-  Route::get(' /home',[AdminController::class,'index'])->name('admin.home');
-  Route::resource('category', CategoryController::class);
-  Route::resource('product', ProductController::class);
+  Route::get(' /admin/home',[AdminController::class,'index'])->name('admin.home');
+  Route::resource('/admin/category', CategoryController::class);
+  Route::resource('/admin/product', ProductController::class);
     
 
 

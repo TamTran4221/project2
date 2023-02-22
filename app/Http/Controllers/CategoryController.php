@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cates = Category::all();
+        $cates = Category::orderBy('created_at', 'DESC')->paginate(5);
         return view('/admin/category.index',compact('cates'),['title'=>'Danh sách danh mục']);
     }
 
