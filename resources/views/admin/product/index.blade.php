@@ -15,7 +15,6 @@
                                     <th>image</th>
                                     <th>description</th>
                                     <th>category_id</th>
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,24 +39,15 @@
                                         </td>
                                     </tr>
                                 @endforeach
-
-
                             </tbody>
                         </table>
                         <a href="{{route('product.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới sản phẩm</a>
                         {{ $products->links() }}
                     </div>
-                    
-               
-
-                
-            </div>
-            
+            </div>  
         </div>
-
-
         <!-- /.card-body -->
-
+        
         <!-- /.card -->
     </section>
 @endsection

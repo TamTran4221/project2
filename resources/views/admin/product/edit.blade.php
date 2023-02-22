@@ -29,7 +29,7 @@
         </div>
 
         <div class="input-group mb-3">
-            <input type="file" name="image" class="form-control">
+            <input type="file" name="file" class="form-control">
             <img src="{{url('uploads')}}/{{$product->image}}" alt="" width="100px">
         </div>
         <div class="input-group mb-3">
@@ -53,7 +53,7 @@
             <label for="" class="">Description</label>
         </div>
         <div class="input-group input-group-sm">
-            <textarea class="form-control" name="description" id="" cols="30" rows="15" value =" {{$product->descriprion }}"></textarea>
+            <textarea class="form-control" name="description" id="" cols="30" rows="15" value="{{$product->description }}">{{$product->description }}</textarea>
 
         </div> <span class="input-group-append">
             <button  class="btn btn-info btn-flat">Go!</button>
