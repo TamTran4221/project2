@@ -76,7 +76,7 @@ class CategoryController extends Controller
     {
         $cate = Category::find($id);
         $cate->update($request->all());
-        return redirect()->route('/admin/category.index');
+        return redirect()->route('category.index');
     }
 
     /**

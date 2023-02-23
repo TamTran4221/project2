@@ -16,7 +16,6 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'DESC')->paginate(10);
-        dd($products);
         return view('admin/product.index', compact('products'),['title'=>'danh sách sản phẩm']);
     }   
 

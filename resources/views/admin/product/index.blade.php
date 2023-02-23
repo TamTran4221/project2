@@ -10,11 +10,11 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>name</th>
-                                    <th> price</th>
-                                    <th>image</th>
-                                    <th>description</th>
-                                    <th>category_id</th>
+                                    <th>Name</th>
+                                    <th> Price</th>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                    <th>Category</th>
                                 </tr>
                             </thead>
                             <tbody>

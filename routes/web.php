@@ -22,11 +22,10 @@ Route::get('/', function () {
 });
 Route::get('/admin',[LoginController::class,'index'])->name('login');
 Route::post('/admin',[LoginController::class,'store'])->name('login.store');
- #Route::middleware(['auth'])->group(function(){});
+
+ Route::middleware(['auth'])->group(function(){
  
   Route::get('/admin/home',[AdminController::class,'index'])->name('admin.home');
   Route::resource('/admin/category', CategoryController::class);
   Route::resource('/admin/product', ProductController::class);
-    
-
-//   Route::get(' /admin/product',[ProductController::class,'index'])->name('admin.product.index');
+});

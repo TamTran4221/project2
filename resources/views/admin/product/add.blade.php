@@ -51,8 +51,7 @@
                     <label for="" class="">description *</label>
                 </div>
                 <div class="input-group input-group-sm">
-                    <textarea class="form-control" name="description" id="" cols="30" rows="15"></textarea>
-
+                    <textarea class="form-control" name="description" id="description" cols="30" rows="15"></textarea>
                 </div>
                 <span class="input-group-append mt-3">
                     <button type="submit" class="btn btn-primary">Add</button>
