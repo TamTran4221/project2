@@ -26,6 +26,7 @@ Route::post('/admin',[LoginController::class,'store'])->name('login.store');
  Route::middleware(['auth'])->group(function(){
  
   Route::get('/admin/home',[AdminController::class,'index'])->name('admin.home');
-  Route::resource('category', CategoryController::class);
-  Route::resource('product', ProductController::class);
+  Route::resource('admin/home/category', CategoryController::class);
+  Route::resource('admin/home/product', ProductController::class);
+  Route::resource('admin/home/blog', BlogController::class);
 });

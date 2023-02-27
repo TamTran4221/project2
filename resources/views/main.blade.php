@@ -56,7 +56,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Danh mục
+                Quản Lý Danh Mục
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -79,7 +79,7 @@
             <a href="#" class="nav-link">
               <i class="fas fa-chart-pie mr-1"></i>
               <p>
-                Sản phẩm
+                Quản Lý Sản Phẩm
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -94,6 +94,29 @@
                 <a href="{{route('product.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách sản phẩm</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-chart-pie mr-1"></i>
+              <p>
+                Quản Lý Blog
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('blog.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm mới Blog</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('blog.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách Blog</p>
                 </a>
               </li>
             </ul>
