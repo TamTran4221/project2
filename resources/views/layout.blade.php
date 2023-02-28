@@ -196,6 +196,7 @@
         </div>
     </div>
 </body>
-<script src="/template/layout/js/main.js "></script>
-
+<script src="{{url('template/layout/js')}}/jquery.min.js"></script>
+<script src="{{url('template/layout/js')}}/main.js"></script>
+<script src="{{url('template/layout/js')}}/custom.js"></script>
 </html>

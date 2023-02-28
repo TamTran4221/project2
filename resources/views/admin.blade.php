@@ -19,13 +19,17 @@
 
 
         @yield('content')
-    <script src="/template/admin/plugins/jquery/jquery.min.js"></script>
+    <script src="{{url('template/layout/js')}}/jquery.min.js"></script>
+    <script src="{{url('template/layout/js')}}/jquery-ui.js"></script>
+    <script src="{{url('template/layout/js')}}/jquery.nestable.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="/template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{url('template/layout/js')}}/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="/template/admin/dist/js/adminlte.min.js"></script>
-
-
+    <script src="{{url('template/layout/js')}}/adminlte.min.js"></script>
+    <script src="{{url('template/layout/js')}}/angular.min.js"></script>
+    <script src="{{url('template/layout/js')}}/dashboard.js"></script>
+    <script src="{{url('template/layout/js')}}/app.js"></script>
+    <script src="{{url('template/layout/js')}}/function.js"></script>
 </body>
 
 </html>

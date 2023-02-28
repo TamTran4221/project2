@@ -17,127 +17,24 @@
         <h3 class="lg:text-4xl text-2xl  lg:mb-8 ml-3">SOFA</h3>
     </div>
     <div class="grid lg:grid-cols-4 grid-cols-2 lg:gap-3 gap-2 ml-5 relative">
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA SF108</h4>
+        @foreach ($products2 as $product)
+            <div class="product_item">
+                <a href="sofa-detail.html">
+                    <div class="product_sofa"><img src="{{url('uploads')}}/{{ $product->image }}" alt="image-{{ $product->name }}"></div>
                 </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA SF108</h4>
+                <a class="product_link addtocart" href="javascript:void(0)">
+                    <input type="hidden" value="{{ $product->id }}" class="product-id">
+                    <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
                 </a>
-                <strong>13,576,000 đ</strong>
+                <div class=" lg:mt-20 mt-2   mx-auto text-center">
+                    <P class="text-xs opacity-60">{{ $product->category->name }}</P>
+                    <a class="link_sofa" href="sofa-detail.html">
+                        <h4>{{ $product->name }}</h4>
+                    </a>
+                    <strong>{{ number_format($product->price) }} đ</strong>
+                </div>
             </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA SF108</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA SF108</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA SF108</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_sofa "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">SOFA</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>SOFA SF108</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-
+        @endforeach
     </div>
 
 </div>
@@ -159,8 +56,6 @@
             <h2 class="mt-7 text-2xl text-white">SAVE WHEN SHOPPING IN MONA</h2>
             <p class="mt-2 text-white">Lorem ipsum dolor sit amet, consectetuer</p>
         </div>
-
-
     </div>
 </div>
 <!-- sản phẩm tivi -->
@@ -168,98 +63,25 @@
     <div>
         <h3 class="lg:text-4xl text-2xl  lg:mb-8 ml-3">TV SHELF</h3>
     </div>
-    <div class="grid lg:grid-cols-4 grid-cols-2 lg:gap-3 gap-2 ml-5 relative">
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_tivi "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">TV SHELF</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>LIVING ROOM TV SHELT</h4>
+    @foreach ($products2 as $product)
+        <div class="grid lg:grid-cols-4 grid-cols-2 lg:gap-3 gap-2 ml-5 relative">
+            <div class="product_item">
+                <a href="sofa-detail.html">
+                    <div class="product_tivi "></div>
                 </a>
-                <strong>4.759,000 đ</strong>
+                <a class="product_link" href="">
+                    <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
+                </a>
+                <div class=" lg:mt-20 mt-2   mx-auto text-center">
+                    <P class="text-xs opacity-60">TV SHELF</P>
+                    <a class="link_sofa" href="sofa-detail.html">
+                        <h4>LIVING ROOM TV SHELT</h4>
+                    </a>
+                    <strong>4.759,000 đ</strong>
+                </div>
             </div>
         </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_tivi "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">TV SHELF</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>NATURAL WOODEN SHELVELS</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_tivi "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">TV SHELF</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>PREMIUM NATURAL WOODEN Shelves</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_tivi "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">TV SHELT</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>WOODEN STANDARD</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_tivi "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60"> TV SHELF</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>CAM WOOD TV Shelves</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-        <div class="product_item">
-            <a href="sofa-detail.html">
-                <div class="product_tivi "></div>
-            </a>
-            <a class="product_link" href="">
-                <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
-            </a>
-            <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                <P class="text-xs opacity-60">TV SHELF</P>
-                <a class="link_sofa" href="sofa-detail.html">
-                    <h4>Peach Wood TV Shelf</h4>
-                </a>
-                <strong>13,576,000 đ</strong>
-            </div>
-        </div>
-    </div>
+    @endforeach
 </div>
 <div class="grid lg:grid-cols-2 grid-cols-1 gap-4 h-96 mt-14 w-full">
     <div class="img-inner">

@@ -24,7 +24,7 @@
 
 <?php //Hiển thị form sửa sản phẩm?>
 <div class="card-body">
-    <form method="POST" action="{{route('product.update',$product)}}" enctype= "multipart/form-data">
+    <form method="POST" action="{{route('admin.product.update',$product)}}" enctype= "multipart/form-data">
         @csrf
         @method('PUT')
         <div class="input-group mb-3">

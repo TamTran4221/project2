@@ -62,13 +62,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('category.create')}}" class="nav-link">
+                <a href="{{route('admin.category.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('category.index')}}" class="nav-link">
+                <a href="{{route('admin.category.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách danh mục</p>
                 </a>
@@ -85,13 +85,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('product.create')}}" class="nav-link">
+                <a href="{{route('admin.product.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm mới sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('product.index')}}" class="nav-link">
+                <a href="{{route('admin.product.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách sản phẩm</p>
                 </a>
@@ -144,6 +144,17 @@
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 <!-- ./wrapper -->
+<script src="{{url('template/layout/js')}}/jquery.min.js"></script>
+<script src="{{url('template/layout/js')}}/jquery-ui.js"></script>
+<script src="{{url('template/layout/js')}}/jquery.nestable.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{url('template/layout/js')}}/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{{url('template/layout/js')}}/adminlte.min.js"></script>
+<script src="{{url('template/layout/js')}}/angular.min.js"></script>
+<script src="{{url('template/layout/js')}}/dashboard.js"></script>
+<script src="{{url('template/layout/js')}}/app.js"></script>
+<script src="{{url('template/layout/js')}}/function.js"></script>
 </body>
 </html>
 

@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-12">
                     <div class="card-body">
-                        <a href="{{route('product.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới sản phẩm</a>
+                        <a href="{{route('admin.product.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới sản phẩm</a>
                         <table id="example2" class="table table-bordered table-hover w-full">
                             <thead>
                                 <tr>
@@ -52,10 +52,10 @@
                                         <td>{{ $value->description }}</td>
                                         <td>{{ $value->category->name}}</td>
                                         <td>
-                                            <a href="{{ route('product.edit', $value) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('admin.product.edit', $value) }}" class="btn btn-primary">Edit</a>
                                         </td>
                                         <td>
-                                            <form action="{{ route('product.destroy', $value) }}" method="POST"
+                                            <form action="{{ route('admin.product.destroy', $value) }}" method="POST"
                                                 onsubmit="return confirm('Bạn thực sự muốn xóa sản phẩm này?')">
                                                 @csrf
                                                 @method('DELETE')

@@ -21,9 +21,9 @@
                             <td>{{$data->name}}</td>
                             <td>{{$data->status ? 'Hiện' : 'Ẩn'}}</td>
                             <td>
-                                <a href="{{route('category.edit',$data)}}" class="btn btn-primary">Sửa</a>
+                                <a href="{{route('admin.category.edit',$data)}}" class="btn btn-primary">Sửa</a>
 
-                                <form action="{{route('category.destroy',$data)}}" method="POST">
+                                <form action="{{route('admin.category.destroy',$data)}}" method="POST">
                                     @method('DELETE')
                                     @csrf
                                     <button type="submit" class="btn btn-danger">Xóa</button>
@@ -33,7 +33,7 @@
                        @endforeach
                     </tbody>
                   </table>
-                  <a href="{{route('category.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới</a>
+                  <a href="{{route('admin.category.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới</a>
                   {{ $cates->links() }}
             </div>
            

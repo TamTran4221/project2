@@ -1,12 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class AdminController extends Controller
+class AdminCategoryController extends Controller
 {
+    private $category;
+
+    public function __construct(
+        Category $Category
+    ){
+        $this->category = $Category;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,10 +23,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        
-        return view('admin.home',[
-            'title'=> 'Trang chủ Admin'
-        ]);
+        $cates = $this->category->getDataIndex($i = 5);
+        return view('admin.category.index',compact('cates'),['title'=>'Danh sách danh mục']);
     }
 
     /**
@@ -27,7 +34,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.add',['title'=>'Thêm mới danh mục']);
     }
 
     /**
@@ -38,18 +45,8 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $this->category->add($request);
+        return redirect()->route('category.index');
     }
 
     /**
@@ -60,7 +57,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        $cate = $this->category->getById($id);
+        return view('admin.category.edit',compact('cate'),['title'=> 'Chỉnh sửa danh mục']);
     }
 
     /**
@@ -72,7 +70,8 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->category->add($request, $id);
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -83,6 +82,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $this->category->remove($id);
+        return redirect()->back();
     }
 }

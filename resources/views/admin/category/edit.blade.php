@@ -3,7 +3,7 @@
     <div class="container" style="margin: 50px">
         <div class="row">
         
-        <form method="POST" action="{{route('category.update',$cate)}}">
+        <form method="POST" action="{{route('admin.category.update',$cate)}}">
             @csrf
             @method('PUT')
             <div class="form-group">

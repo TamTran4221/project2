@@ -1,10 +1,16 @@
 <?php
 
-use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+// use controller admin
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminProductController;
+
+// use controller view
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +23,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.home');
-});
-Route::get('/admin',[LoginController::class,'index'])->name('login');
-Route::post('/admin',[LoginController::class,'store'])->name('login.store');
+// view frontend
+Route::get('/',[HomeController::class, 'index'])->name('view.home');
+Route::get('/collection/all',[CategoryController::class, 'index'])->name('view.collection');
+Route::get('/cart/add/{pro_id}/{cus_id}',[CartController::class, 'add'])->name('view.cart.add');
 
- Route::middleware(['auth'])->group(function(){
- 
-  Route::get('/admin/home',[AdminController::class,'index'])->name('admin.home');
-  Route::resource('category', CategoryController::class);
-  Route::resource('product', ProductController::class);
+
+// login admin
+Route::get('/admin',[AdminLoginController::class,'index'])->name('login');
+Route::post('/admin',[AdminLoginController::class,'store'])->name('login.store');
+
+// view admin
+Route::name('admin.')->prefix('admin')->middleware(['auth'])->group(function(){
+
+  Route::get('/home',[AdminController::class,'index'])->name('home');
+  Route::resource('/category', AdminCategoryController::class);
+  Route::resource('/product', AdminProductController::class);
 });
