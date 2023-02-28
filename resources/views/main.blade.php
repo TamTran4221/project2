@@ -108,13 +108,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('blog.create')}}" class="nav-link">
+                <a href="{{route('admin.blog.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm mới Blog</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('blog.index')}}" class="nav-link">
+                <a href="{{route('admin.blog.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách Blog</p>
                 </a>
@@ -169,15 +169,10 @@
 <!-- ./wrapper -->
 <script src="{{url('template/layout/js')}}/jquery.min.js"></script>
 <script src="{{url('template/layout/js')}}/jquery-ui.js"></script>
-<script src="{{url('template/layout/js')}}/jquery.nestable.js"></script>
 <!-- Bootstrap 4 -->
 <script src="{{url('template/layout/js')}}/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{url('template/layout/js')}}/adminlte.min.js"></script>
-<script src="{{url('template/layout/js')}}/angular.min.js"></script>
-<script src="{{url('template/layout/js')}}/dashboard.js"></script>
-<script src="{{url('template/layout/js')}}/app.js"></script>
-<script src="{{url('template/layout/js')}}/function.js"></script>
 </body>
 </html>
 

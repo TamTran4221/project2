@@ -2,7 +2,7 @@
 @section('noidung')
     <div class="container" style="margin: 50px">
         
-        <form method="POST" action="{{route('blog.store')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('admin.blog.store')}}" enctype="multipart/form-data">
             @csrf
             <div class="input-group mb-3">
                 <label for="" class="">Tiêu đề *</label>

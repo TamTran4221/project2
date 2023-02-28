@@ -21,15 +21,10 @@
         @yield('content')
     <script src="{{url('template/layout/js')}}/jquery.min.js"></script>
     <script src="{{url('template/layout/js')}}/jquery-ui.js"></script>
-    <script src="{{url('template/layout/js')}}/jquery.nestable.js"></script>
     <!-- Bootstrap 4 -->
     <script src="{{url('template/layout/js')}}/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{url('template/layout/js')}}/adminlte.min.js"></script>
-    <script src="{{url('template/layout/js')}}/angular.min.js"></script>
-    <script src="{{url('template/layout/js')}}/dashboard.js"></script>
-    <script src="{{url('template/layout/js')}}/app.js"></script>
-    <script src="{{url('template/layout/js')}}/function.js"></script>
 </body>
 
 </html>

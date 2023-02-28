@@ -34,10 +34,10 @@ Route::get('/admin',[AdminLoginController::class,'index'])->name('login');
 Route::post('/admin',[AdminLoginController::class,'store'])->name('login.store');
 
 // view admin
-Route::name('admin.')->prefix('/admin/home')->middleware(['auth'])->group(function(){
+Route::name('admin.')->prefix('/admin')->middleware(['auth'])->group(function(){
 
-  Route::get('/admin/home',[AdminController::class,'index'])->name('home');
-  Route::resource('admin/home/category', AdminCategoryController::class);
-  Route::resource('admin/home/product', AdminProductController::class);
-  Route::resource('admin/home/blog', AdminBlogController::class);
+  Route::get('/home',[AdminController::class,'index'])->name('home');
+  Route::resource('/home/category', AdminCategoryController::class);
+  Route::resource('/home/product', AdminProductController::class);
+  Route::resource('/home/blog', AdminBlogController::class);
 });

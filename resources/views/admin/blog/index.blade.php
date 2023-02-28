@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-12">
                     <div class="card-body">
-                        <a href="{{route('blog.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới blog</a>
+                        <a href="{{route('admin.blog.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới blog</a>
                         <table id="example2" class="table table-bordered table-hover w-full">
                             <thead>
                                 <tr>
@@ -50,10 +50,10 @@
                                         <td><img src="{{url('uploads')}}/{{$value->image}}" alt="" width="100px"></td>
                                         <td>{{ $value->status }}</td>
                                         <td>
-                                            <a href="{{ route('blog.edit', $value) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('admin.blog.edit', $value) }}" class="btn btn-primary">Edit</a>
                                         </td>
                                         <td>
-                                            <form action="{{ route('blog.destroy', $value) }}" method="POST"
+                                            <form action="{{ route('admin.blog.destroy', $value) }}" method="POST"
                                                 onsubmit="return confirm('Bạn thực sự muốn xóa sản phẩm này?')">
                                                 @csrf
                                                 @method('DELETE')
