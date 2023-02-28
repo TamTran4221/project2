@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminBlogController;
 
 // use controller view
 use App\Http\Controllers\CategoryController;
@@ -28,15 +29,15 @@ Route::get('/',[HomeController::class, 'index'])->name('view.home');
 Route::get('/collection/all',[CategoryController::class, 'index'])->name('view.collection');
 Route::get('/cart/add/{pro_id}/{cus_id}',[CartController::class, 'add'])->name('view.cart.add');
 
-
 // login admin
 Route::get('/admin',[AdminLoginController::class,'index'])->name('login');
 Route::post('/admin',[AdminLoginController::class,'store'])->name('login.store');
 
 // view admin
-Route::name('admin.')->prefix('admin')->middleware(['auth'])->group(function(){
+Route::name('admin.')->prefix('/admin/home')->middleware(['auth'])->group(function(){
 
-  Route::get('/home',[AdminController::class,'index'])->name('home');
-  Route::resource('/category', AdminCategoryController::class);
-  Route::resource('/product', AdminProductController::class);
+  Route::get('/admin/home',[AdminController::class,'index'])->name('home');
+  Route::resource('admin/home/category', AdminCategoryController::class);
+  Route::resource('admin/home/product', AdminProductController::class);
+  Route::resource('admin/home/blog', AdminBlogController::class);
 });
