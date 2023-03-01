@@ -30,30 +30,41 @@
         <div class="row">
             <div class="col-12">
                     <div class="card-body">
-                        <a href="{{route('admin.blog.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới blog</a>
+                        <a href="{{route('admin.product.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới sản phẩm</a>
                         <table id="example2" class="table table-bordered table-hover w-full">
                             <thead>
                                 <tr>
                                     <th>STT</th>
-                                    <th>Tiêu đề</th>
-                                    <th>Nội dung</th>
-                                    <th>Image</th>
-                                    <th>status</th>
+                                    <th>Avatar</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>role</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($blogs as $value)
+                                @foreach ($users as $value)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $value->title }}</td>
-                                        <td>{{ $value->content }}</td>
-                                        <td><img src="{{url('uploads')}}/{{$value->image}}" alt="" width="100px"></td>
-                                        <td>{{ $value->status }}</td>
+                                        <td><img src="{{url('uploads')}}/{{ ($value->avatar != '')? $value->avatar: 'default_user.png'; }}" alt="Avatar" width="40px"></td>
+                                        <td>{{ $value->name }}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td><?php if ($value->role == 0) {
+                                               echo 'Người quản trị';
+                                            } else if ($value->role == 1) {
+                                                echo 'Khách Hàng';
+                                            } else {
+                                                echo 'Cộng tác viên';
+                                            } ?>
+                                       </td>
+                                        <td>{{ $value->created_at }}</td>
+                                        <td>{{ $value->updated_at }}</td>
                                         <td>
-                                            <a href="{{ route('admin.blog.edit', $value) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('admin.user.edit', $value) }}" class="btn btn-primary">Edit</a>
                                         </td>
                                         <td>
-                                            <form action="{{ route('admin.blog.destroy', $value) }}" method="POST"
+                                            <form action="{{ route('admin.user.destroy', $value) }}" method="POST"
                                                 onsubmit="return confirm('Bạn thực sự muốn xóa sản phẩm này?')">
                                                 @csrf
                                                 @method('DELETE')
@@ -65,7 +76,7 @@
                             </tbody>
                         </table>
                         
-                        {{-- {{ $blogs->links() }} --}}
+                        {{ $users->links() }}
                     </div>
             </div>  
         </div>

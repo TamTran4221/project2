@@ -26,45 +26,36 @@
     <div class="card-body">
         <div class="tab-description p-0">
 
-            <form action="{{route('admin.product.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.user.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 
                 <div class="input-group mb-3">
-                    <label for="" class="">Tên sản phẩm *</label>
+                    <label for="" class="">Tên tài khoản *</label>
                 </div>
                 <div class="input-group mb-3">
-
-                    <input type="name" placeholder="Tên sản phẩm" name="name" class="form-control">
+                    <input type="name" placeholder="Tên tài khoản..." name="name" class="form-control">
                 </div>
                 <div class="input-group mb-3">
-                    <label for="" class="">Giá sản phẩm *</label>
+                    <label for="" class="">Tài khoản*</label>
                 </div>
                 <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">VND</span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Giá sản phẩm" name="price">
-                    <div class="input-group-append">
-                        <span class="input-group-text">.00</span>
-                    </div>
+                    <input type="text" class="form-control" placeholder="Tài khoản..." name="email">
                 </div>
                 <div class="input-group mb-3">
-                    <label for="" class="">Ảnh *</label>
+                    <label for="" class="">Ảnh đại diện *</label>
                 </div>
                 <div class="input-group mb-3">
                     <input type="file" name="file" class="form-control">
                 </div>
                 <div class="input-group mb-3">
-                    <label for="" class="">Danh mục *</label>
+                    <label for="" class="">Quyền của tài khoản *</label>
                 </div>
                 <div class="input-group mb-3">
-                    
-                    <select class="form-control" name="category_id" id="">
-                        @foreach($cate as $value)
+                    <select class="form-control" name="role_id" id="">
+                        @foreach($role as $value)
                             <option value="{{$value->id}}">{{$value->name}}</option>
                         @endforeach
                       </select>
-                    
                 </div>
 
                 <!-- /input-group -->

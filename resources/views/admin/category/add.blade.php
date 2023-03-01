@@ -3,7 +3,7 @@
     <div class="container" style="margin: 50px">
         <div class="row">
         
-        <form method="POST" action="{{route('category.store')}}">
+        <form method="POST" action="{{route('admin.category.store')}}">
             @csrf
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên danh mục</label>
@@ -12,11 +12,6 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Trạng thái</label>
-                <div class="form-check form-check-inline">
-                    <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="status" id="" value="0"> Ẩn
-                    </label>
-                </div>
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="status" id="" value="1" checked> Hiện

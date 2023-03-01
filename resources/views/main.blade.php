@@ -62,13 +62,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('category.create')}}" class="nav-link">
+                <a href="{{route('admin.category.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm danh mục</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('category.index')}}" class="nav-link">
+                <a href="{{route('admin.category.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách danh mục</p>
                 </a>
@@ -77,7 +77,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-chart-pie mr-1"></i>
+              <i class="fas fa-chart-pie nav-icon"></i>
               <p>
                 Quản Lý Sản Phẩm
                 <i class="right fas fa-angle-left"></i>
@@ -85,13 +85,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('product.create')}}" class="nav-link">
+                <a href="{{route('admin.product.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm mới sản phẩm</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('product.index')}}" class="nav-link">
+                <a href="{{route('admin.product.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách sản phẩm</p>
                 </a>
@@ -100,7 +100,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-blog"></i>
+              <i class="fas fa-blog nav-icon"></i>
               <p>
                 Quản Lý Blog
                 <i class="right fas fa-angle-left"></i>
@@ -108,15 +108,38 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('blog.create')}}" class="nav-link">
+                <a href="{{route('admin.blog.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Thêm mới Blog</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('blog.index')}}" class="nav-link">
+                <a href="{{route('admin.blog.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách Blog</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user nav-icon"></i>
+              <p>
+                Quản Lý Tài Khoản
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.user.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm mới Tài Khoản</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.user.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách Tài Khoản</p>
                 </a>
               </li>
             </ul>
@@ -167,6 +190,12 @@
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 <!-- ./wrapper -->
+<script src="{{url('template/layout/js')}}/jquery.min.js"></script>
+<script src="{{url('template/layout/js')}}/jquery-ui.js"></script>
+<!-- Bootstrap 4 -->
+<script src="{{url('template/layout/js')}}/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="{{url('template/layout/js')}}/adminlte.min.js"></script>
 </body>
 </html>
 

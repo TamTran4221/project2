@@ -1,22 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\Product;
 use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class AdminCategoryController extends Controller
 {
-    private $product;
     private $category;
 
     public function __construct(
-        Product $product,
-        Category $category
+        Category $Category
     ){
-        $this->product = $product;
-        $this->category = $category;
+        $this->category = $Category;
     }
 
     /**
@@ -26,9 +23,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = $this->product->getDataIndex($i = 10);
-        return view('admin.product.index', compact('products'));
-    }   
+        $cates = $this->category->getDataIndex($i = 5);
+        return view('admin.category.index',compact('cates'),['title'=>'Danh sách danh mục']);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -37,8 +34,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $cate = $this->category->getAll();
-        return view('admin/product.add',compact('cate'),['title'=> 'thêm mới sản phẩm']);
+        return view('admin.category.add',['title'=>'Thêm mới danh mục']);
     }
 
     /**
@@ -49,9 +45,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $this->product->add($request);
-        return redirect()->route('product.index');
-        
+        $this->category->add($request);
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -62,9 +57,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $this->product->getProductByCatId($id);
-        $this->category->getAll();
-        return view('admin/product.edit',compact('product','cate'), ['title' =>'Chỉnh Sửa sản phẩm']);
+        $cate = $this->category->getById($id);
+        return view('admin.category.edit',compact('cate'),['title'=> 'Chỉnh sửa danh mục']);
     }
 
     /**
@@ -76,13 +70,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try {
-            $this->product->add($request, $id);
-            return redirect()->route('product.index');
-        } catch (\Throwable $th) {
-            //throw $th;
-            dd($th);
-        }
+        $this->category->add($request, $id);
+        return redirect()->route('admin.category.index');
     }
 
     /**
@@ -93,11 +82,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        try {
-            $this->product->remove($id);
-            return redirect()->back();
-        } catch (\Throwable $th) {
-            //throw $th;
-        }
+        $this->category->remove($id);
+        return redirect()->back();
     }
 }
