@@ -100,7 +100,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-chart-pie mr-1"></i>
+              <i class="fas fa-blog"></i>
               <p>
                 Quản Lý Blog
                 <i class="right fas fa-angle-left"></i>

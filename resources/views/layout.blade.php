@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="/template/layout/css/style.css">
+    <link rel="stylesheet" href="/template/layout/css/contact.css">
+    <link rel="stylesheet" href="/template/layout/css/news.css">
     <link rel="stylesheet" href="/template/layout/css/fontawesome-free-6.2.0-web/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
@@ -67,25 +69,22 @@
         </nav>
         <div class=" gap-10 justify-center p-5 lg:flex hidden">
             <div class="hover:text-amber-600 ">
-                <a href="introduce.html">ABOUT</a>
+                <a href="introduce.html">GIỚI THIỆU</a>
             </div>
             <div class="hover:text-amber-600 ">
-                <a href="table.html">FURNITURE</a>
+                <a href="table.html">BÀN GHẾ</a>
             </div>
             <div class="hover:text-amber-600 ">
-                <a href="sofa.html">SOFA</a>
+                <a href="sofa.html">BÀN GHẾ SOFA</a>
             </div>
             <div class="hover:text-amber-600 ">
-                <a href="tivi.html">TV SHELF</a>
+                <a href="tivi.html">KỆ TIVI</a>
             </div>
             <div class="hover:text-amber-600 ">
-                <a href="news.html">NEWS</a>
+                <a href="news.html">TIN TỨC</a>
             </div>
             <div class="hover:text-amber-600 ">
-                <a href="contact.html">CONTACT</a>
-            </div>
-            <div class="hover:text-amber-600 ">
-                <a href="compare.html">COMPARE</a>
+                <a href="contact.html">LIÊN HỆ</a>
             </div>
         </div>
     </header>
@@ -94,14 +93,14 @@
         <div class="container lg:w-11/12 w-full lg:mx-auto mx-0 mt-14 ">
             <div class="lg:flex justify-between ">
                 <div class="footer_list ">
-                    <h2 class="text-2xl font-semibold leading-9 ml-4 ">DIRECTIONAL</h2>
+                    <h2 class="text-2xl font-semibold leading-9 ml-4 ">ĐIỀU HƯỚNG</h2>
 
                     <ul class="mt-5 ">
-                        <li class="text-xl mt-3 footer_list-link "><a href=" ">HOME PAGE</a> </li>
-                        <li class="text-xl mt-3 footer_list-link "><a href=" ">ABOUT</a> </li>
-                        <li class="text-xl mt-3 footer_list-link "><a href=" ">PRODUCT</a> </li>
-                        <li class="text-xl mt-3 footer_list-link "><a href=" ">USEFUL NEWS POINTS ONLY</a> </li>
-                        <li class="text-xl mt-3 footer_list-link "><a href=" ">CONTACT</a> </li>
+                        <li class="text-xl mt-3 footer_list-link "><a href=" ">TRANG CHỦ</a> </li>
+                        <li class="text-xl mt-3 footer_list-link "><a href=" ">GIỚI THIỆU</a> </li>
+                        <li class="text-xl mt-3 footer_list-link "><a href=" ">SẢN PHẨM</a> </li>
+                        <li class="text-xl mt-3 footer_list-link "><a href=" ">ĐIỂM TIN HỮU ÍCH</a> </li>
+                        <li class="text-xl mt-3 footer_list-link "><a href=" ">LIÊN HỆ</a> </li>
                     </ul>
                 </div>
                 <div class="text-center info_footer lg:mt-0 mt-8">
@@ -111,14 +110,14 @@
                     <p class="text-base mt-6 ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet ....</p>
                     <div class="mt-6 ">
                         <input class="input_info " type="email " placeholder="Email ... ">
-                        <div class="button_footer flex justify-center items-center ">
-                            <button>SIGN UP</button>
+                        <div class="button_footer flex justify-center items-center mt-8">
+                            <button>ĐĂNG KÝ</button>
                         </div>
                     </div>
 
                 </div>
                 <div class="footer_list-info ">
-                    <h2 class="text-2xl font-semibold leading-9 ml-4 ">CONTACT</h2>
+                    <h2 class="text-2xl font-semibold leading-9 ml-4 ">LIÊN HỆ </h2>
                     <div class="flex mt-5">
                         <span class="text-yellow-400 mr-1">A</span>
                         <h3>:319 c16 Ly Thuong Kiet, ward 15, District 11, Tp.HCM</h3>
@@ -145,23 +144,23 @@
             <div class="modal_close js_modal-close"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal_content">
                 <header class="modal_header">
-                    LOGIN
+                    Đăng nhập
                 </header>
                 <form action="" method="get">
                     <div class="modal_body">
 
-                        <label for="" class="modal_label">Account or email address *</label>
+                        <label for="" class="modal_label">Tài khoản hoặc địa chỉ email *</label>
                         <input required class="modal_input" type="email" placeholder="Email ...">
-                        <label for="" class="modal_label">Password *</label>
+                        <label for="" class="modal_label">Mật khẩu *</label>
                         <input required class="modal_input" type="password" placeholder="password">
                         <button id="login">Login</button>
                         <input type="checkbox" class="modal_check">
-                        <label for="">Remember me</label>
+                        <label for="">Nhớ mật khẩu</label>
 
                     </div>
                     <footer class="flex justify-between">
-                        <a class="modal_footer" href="">Forgot your password?</a>
-                        <p class="modal_signup" href="">Don't have an account ?</p>
+                        <a class="modal_footer" href="">Quên mật khẩu?</a>
+                        <p class="modal_signup" href="">Bạn chưa có tài khoản?</p>
                     </footer>
                 </form>
 
@@ -176,18 +175,18 @@
             <div class="modal_close-signup js_modal-close-signup"><i class="fa-solid fa-xmark"></i></div>
             <div class="modal_content-signup">
                 <header class="modal_header-signup">
-                    SIGNUP
+                    Đăng ký
                 </header>
                 <form action="" method="get">
                     <div class="modal_body-signup">
 
-                        <label for="" class="modal_label-signup">Account name or email address *</label>
+                        <label for="" class="modal_label-signup">Tài khoản hoặc địa chỉ email *</label>
                         <input required class="modal_input-signup" type="email" placeholder="Email ...">
-                        <label for="" class="modal_label-signup">Password *</label>
+                        <label for="" class="modal_label-signup">Mật khẩu *</label>
                         <input required class="modal_input-signup" type="password" placeholder="Password">
-                        <label for="" class="modal_label-signup">Confirm password *</label>
+                        <label for="" class="modal_label-signup">Nhập lại mật khẩu *</label>
                         <input required class="modal_input-signup" type="password" placeholder="confirm password">
-                        <button id="signup">Signup</button>
+                        <button id="signup">Đăng kí</button>
 
                     </div>
                 </form>

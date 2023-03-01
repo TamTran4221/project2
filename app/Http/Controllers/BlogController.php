@@ -31,8 +31,39 @@ class BlogController extends Controller
     }
     public function edit($id)
     {
-        $cate = Blog::find($id);
+        $blog = Blog::find($id);
 
-        return view('/admin/blog.edit',compact('cate'),['title'=> 'Chỉnh sửa blog']);
+        return view('/admin/blog.edit',compact('blog'),['title'=> 'Chỉnh sửa blog']);
     }
+    public function update(Request $request, $id)
+    {
+        $blog = Blog::find($id);
+        if($request->hasFile('file')){
+            $file = $request->file;
+            $file_name =  $file->getClientOriginalName();
+            $file->move(public_path('uploads'),$file_name);
+        } else {
+            $file_name = $blog->image;
+        }
+        
+        $request->merge(['image'=>$file_name]);
+        
+        try {
+            $blog->update($request->all());
+            return redirect()->route('product.index');
+        } catch (\Throwable $th) {
+            //throw $th;
+            dd($th);
+        }
+    }
+    public function destroy($id)
+    {
+        try {
+            Blog::find($id)->delete();
+            return redirect()->back();
+         } catch (\Throwable $th) {
+             //throw $th;
+         }
+    }
+        
 }
