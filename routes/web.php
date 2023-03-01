@@ -1,12 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 // use controller admin
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminBlogController;
+use App\Http\Controllers\Admin\AdminUserController;
 
 // use controller view
 use App\Http\Controllers\CategoryController;
@@ -40,4 +42,5 @@ Route::name('admin.')->prefix('/admin')->middleware(['auth'])->group(function(){
   Route::resource('/home/category', AdminCategoryController::class);
   Route::resource('/home/product', AdminProductController::class);
   Route::resource('/home/blog', AdminBlogController::class);
+  Route::resource('/home/user', AdminUserController::class);
 });

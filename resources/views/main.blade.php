@@ -77,7 +77,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-chart-pie mr-1"></i>
+              <i class="fas fa-chart-pie nav-icon"></i>
               <p>
                 Quản Lý Sản Phẩm
                 <i class="right fas fa-angle-left"></i>
@@ -100,7 +100,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="fas fa-chart-pie mr-1"></i>
+              <i class="fas fa-blog nav-icon"></i>
               <p>
                 Quản Lý Blog
                 <i class="right fas fa-angle-left"></i>
@@ -117,6 +117,29 @@
                 <a href="{{route('admin.blog.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách Blog</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-user nav-icon"></i>
+              <p>
+                Quản Lý Tài Khoản
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{route('admin.user.create')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Thêm mới Tài Khoản</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('admin.user.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách Tài Khoản</p>
                 </a>
               </li>
             </ul>

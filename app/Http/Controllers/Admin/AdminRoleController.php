@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\RoleModel;
 
-class AdminCategoryController extends Controller
+class AdminRoleController extends Controller
 {
-    private $category;
+    private $role;
 
     public function __construct(
-        Category $Category
+        RoleModel $role
     ){
-        $this->category = $Category;
+        $this->role = $role;
     }
 
     /**
@@ -23,8 +23,8 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $cates = $this->category->getDataIndex($i = 5);
-        return view('admin.category.index',compact('cates'),['title'=>'Danh sách danh mục']);
+        $role = $this->role->getAll();
+        return view('admin.role.index',compact('role'),['title'=>'Danh sách quyền']);
     }
 
     /**
@@ -34,7 +34,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.add',['title'=>'Thêm mới danh mục']);
+        return view('admin.role.add',['title'=>'Thêm mới quyền']);
     }
 
     /**
@@ -45,8 +45,8 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->category->add($request);
-        return redirect()->route('admin.category.index');
+        $this->role->add($request);
+        return redirect()->route('admi.role.index');
     }
 
     /**
@@ -57,8 +57,8 @@ class AdminCategoryController extends Controller
      */
     public function edit($id)
     {
-        $cate = $this->category->getById($id);
-        return view('admin.category.edit',compact('cate'),['title'=> 'Chỉnh sửa danh mục']);
+        $role = $this->role->getById($id);
+        return view('admin.role.edit',compact('role'),['title'=> 'Chỉnh sửa quyền']);
     }
 
     /**
@@ -70,8 +70,8 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->category->add($request, $id);
-        return redirect()->route('admin.category.index');
+        $this->role->add($request, $id);
+        return redirect()->route('admin.role.index');
     }
 
     /**
@@ -82,7 +82,7 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $this->category->remove($id);
+        $this->role->remove($id);
         return redirect()->back();
     }
 }

@@ -3,17 +3,21 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\RoleModel;
+use App\Models\User;
 
-class AdminCategoryController extends Controller
+class AdminUserController extends Controller
 {
-    private $category;
+    private $user;
+    private $role;
 
     public function __construct(
-        Category $Category
+        User $user,
+        RoleModel $role
     ){
-        $this->category = $Category;
+        $this->user = $user;
+        $this->role = $role;
     }
 
     /**
@@ -23,8 +27,9 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $cates = $this->category->getDataIndex($i = 5);
-        return view('admin.category.index',compact('cates'),['title'=>'Danh sách danh mục']);
+        
+        $users = $this->user->getDataIndex();
+        return view('admin.user.index',compact('users'),['title'=>'Danh sách tài khoản']);
     }
 
     /**
@@ -34,7 +39,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.add',['title'=>'Thêm mới danh mục']);
+        return view('admin.user.add',['title'=>'Thêm mới tài khoản']);
     }
 
     /**
@@ -45,8 +50,8 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $this->category->add($request);
-        return redirect()->route('admin.category.index');
+        $this->user->add($request);
+        return redirect()->route('category.index');
     }
 
     /**
@@ -57,7 +62,7 @@ class AdminCategoryController extends Controller
      */
     public function edit($id)
     {
-        $cate = $this->category->getById($id);
+        $cate = $this->user->getById($id);
         return view('admin.category.edit',compact('cate'),['title'=> 'Chỉnh sửa danh mục']);
     }
 
@@ -70,7 +75,7 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->category->add($request, $id);
+        $this->user->add($request, $id);
         return redirect()->route('admin.category.index');
     }
 
@@ -82,7 +87,7 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
-        $this->category->remove($id);
+        $this->user->remove($id);
         return redirect()->back();
     }
 }
