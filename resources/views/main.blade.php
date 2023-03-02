@@ -142,6 +142,12 @@
                   <p>Danh sách Tài Khoản</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('admin.role.index')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Danh sách quyền</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>

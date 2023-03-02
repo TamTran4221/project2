@@ -4,14 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\RoleModel;
+use App\Models\Role;
 
 class AdminRoleController extends Controller
 {
     private $role;
 
     public function __construct(
-        RoleModel $role
+        Role $role
     ){
         $this->role = $role;
     }
@@ -23,8 +23,8 @@ class AdminRoleController extends Controller
      */
     public function index()
     {
-        $role = $this->role->getAll();
-        return view('admin.role.index',compact('role'),['title'=>'Danh sách quyền']);
+        $roles = $this->role->getDataIndex();
+        return view('admin.role.index',compact('roles'),['title'=>'Danh sách quyền']);
     }
 
     /**
@@ -46,7 +46,7 @@ class AdminRoleController extends Controller
     public function store(Request $request)
     {
         $this->role->add($request);
-        return redirect()->route('admi.role.index');
+        return redirect()->route('admin.role.index');
     }
 
     /**

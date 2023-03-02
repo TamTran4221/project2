@@ -22,17 +22,17 @@
 	</div>
 @endif
 
-<?php //Form thêm mớisản phẩm?>
+<?php //Form chỉnh sửa sản phẩm?>
     <div class="card-body">
         <div class="tab-description p-0">
-
-            <form action="{{route('admin.user.store')}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('admin.role.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="input-group mb-3">
                     <label for="" class="">Tên quyền *</label>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="name" placeholder="Tên quyền..." name="name" class="form-control">
+                    <input type="hidden" value="{{ $role->id }}" name="id">
+                    <input type="name" placeholder="Tên quyền..." value="{{ $role->name }}" name="name" class="form-control">
                 </div>
                 <span class="input-group-append mt-3">
                     <button type="submit" class="btn btn-primary">Add</button>

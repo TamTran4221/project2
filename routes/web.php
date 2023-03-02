@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminBlogController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\AdminRoleController;
 
 // use controller view
 use App\Http\Controllers\CategoryController;
@@ -43,4 +44,5 @@ Route::name('admin.')->prefix('/admin')->middleware(['auth'])->group(function(){
   Route::resource('/home/product', AdminProductController::class);
   Route::resource('/home/blog', AdminBlogController::class);
   Route::resource('/home/user', AdminUserController::class);
+  Route::resource('/home/role', AdminRoleController::class);
 });
