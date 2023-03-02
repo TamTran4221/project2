@@ -28,18 +28,11 @@
 
             <form action="{{route('admin.user.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
-                
                 <div class="input-group mb-3">
                     <label for="" class="">Tên tài khoản *</label>
                 </div>
                 <div class="input-group mb-3">
                     <input type="name" placeholder="Tên tài khoản..." name="name" class="form-control">
-                </div>
-                <div class="input-group mb-3">
-                    <label for="" class="">Tài khoản*</label>
-                </div>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Tài khoản..." name="email">
                 </div>
                 <div class="input-group mb-3">
                     <label for="" class="">Ảnh đại diện *</label>
@@ -48,27 +41,27 @@
                     <input type="file" name="file" class="form-control">
                 </div>
                 <div class="input-group mb-3">
+                    <label for="" class="">Tài khoản*</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Tài khoản..." name="email">
+                </div>
+                <div class="input-group mb-3">
+                    <label for="" class="">Mật khẩu*</label>
+                </div>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Mật khẩu..." name="password">
+                </div>
+                <div class="input-group mb-3">
                     <label for="" class="">Quyền của tài khoản *</label>
                 </div>
                 <div class="input-group mb-3">
                     <select class="form-control" name="role_id" id="">
-                        @foreach($role as $value)
+                        @foreach($roles as $value)
                             <option value="{{$value->id}}">{{$value->name}}</option>
                         @endforeach
                       </select>
                 </div>
-
-                <!-- /input-group -->
-
-                <div class="input-group mb-3">
-                    <label for="" class="">description *</label>
-                </div>
-                <div class="input-group input-group-sm">
-                    <textarea class="form-control" name="description" id="description" cols="30" rows="15"></textarea>
-                </div>
-                <span class="input-group-append mt-3">
-                    <button type="submit" class="btn btn-primary">Add</button>
-                </span>
             </form>
         </div>
     </div>

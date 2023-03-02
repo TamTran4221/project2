@@ -218,37 +218,33 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '2023-02-23 14:36:41', '$2y$10$rZ62H3YPeCDTAwaVuxlWOeC6I/zHF3juWRFkbns5cnZhBEXsNcUc2', NULL, '2023-02-23 14:36:41', '2023-02-23 14:36:41');
-
---
 -- Cấu trúc bảng cho bảng `cart`
 --
 
-CREATE TABLE `role` (
+CREATE TABLE `roles` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) UNSIGNED,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Cấu trúc bảng cho bảng `cart`
 --
 
-CREATE TABLE `cart` (
+CREATE TABLE `carts` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `date_placed` timestamp NULL DEFAULT NULL
+  `date_placed` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Cấu trúc bảng cho bảng `cart_detail`
 --
 
-CREATE TABLE `cart_detail` (
+CREATE TABLE `cart_details` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `cart_id` bigint(20) UNSIGNED NOT NULL,
   `product_id` bigint(20) UNSIGNED NOT NULL,
@@ -324,20 +320,20 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`),
   ADD UNIQUE KEY `user_role_id_foreign` (`role_id`);
 
-ALTER TABLE `role`
+ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `cart`
 --
-ALTER TABLE `cart`
+ALTER TABLE `carts`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cart_user_id_foreign` (`user_id`);
 
 --
 -- Chỉ mục cho bảng `cart_detail`
 --
-ALTER TABLE `cart_detail`
+ALTER TABLE `cart_details`
   ADD PRIMARY KEY (`id`),
   ADD KEY `cart_detail_product_id_foreign` (`product_id`),
   ADD KEY `cart_detail_cart_id_foreign` (`cart_id`);
@@ -397,19 +393,19 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
-ALTER TABLE `role`
+ALTER TABLE `roles`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
-ALTER TABLE `cart`
+ALTER TABLE `carts`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `cart_detail`
 --
-ALTER TABLE `cart_detail`
+ALTER TABLE `cart_details`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
@@ -420,8 +416,20 @@ ALTER TABLE `cart_detail`
 -- Các ràng buộc cho bảng `orders`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `role` (`id`);
+  ADD CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`);
 
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `role_id`, `created_at`, `updated_at`) VALUES
+('1', 'admin', 'admin@gmail.com', '2023-02-23 14:36:41', '$2y$10$rZ62H3YPeCDTAwaVuxlWOeC6I/zHF3juWRFkbns5cnZhBEXsNcUc2', NULL, '1', '2023-02-23 14:36:41', '2023-02-23 14:36:41');
+
+--
+-- Đang đổ dữ liệu cho bảng `roles`
+--
+
+insert into `roles` (`name`, `updated_at`, `created_at`) values ('Người quản trị', '2023-03-02 12:32:01', '2023-03-02 12:32:01');
 --
 -- Các ràng buộc cho bảng `orders`
 --
@@ -445,13 +453,13 @@ COMMIT;
 --
 -- Các ràng buộc cho bảng `cart`
 --
-ALTER TABLE `cart`
+ALTER TABLE `carts`
   ADD CONSTRAINT `cart_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Các ràng buộc cho bảng `cart_detail`
 --
-ALTER TABLE `cart_detail`
+ALTER TABLE `cart_details`
    ADD CONSTRAINT `cart_detail_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products`(`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `cart_detail_cart_id_foreign` FOREIGN KEY (`cart_id`) REFERENCES `cart`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 

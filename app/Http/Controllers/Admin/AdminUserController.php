@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\RoleModel;
+use App\Models\Role;
 use App\Models\User;
 
 class AdminUserController extends Controller
@@ -14,7 +14,7 @@ class AdminUserController extends Controller
 
     public function __construct(
         User $user,
-        RoleModel $role
+        Role $role
     ){
         $this->user = $user;
         $this->role = $role;
@@ -27,7 +27,6 @@ class AdminUserController extends Controller
      */
     public function index()
     {
-        
         $users = $this->user->getDataIndex();
         return view('admin.user.index',compact('users'),['title'=>'Danh sách tài khoản']);
     }
@@ -39,7 +38,8 @@ class AdminUserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.add',['title'=>'Thêm mới tài khoản']);
+        $roles = $this->role->getAll();
+        return view('admin.user.add',compact('roles'),['title'=>'Thêm mới tài khoản']);
     }
 
     /**
