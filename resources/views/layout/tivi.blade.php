@@ -33,39 +33,39 @@
                 </span>
             </div>
             <div>
-                <h3 class="mb-5 mt-5 text-2xl ">Product Portfolio</h3>
+                <h3 class="mb-5 mt-5 text-2xl ">DANH MỤC SẢN PHẨM</h3>
                 <ul>
-                    <li class="  border-b-2 border-solid p-2"><a class="category_link" href="table.html">FURNITURE</a></li>
-                    <li class="  border-b-2 border-solid p-2"><a class="category_link" href="sofa.html">SOFA</a></li>
-                    <li class="  border-b-2 border-solid p-2"><a class="category_link" href="tivi.html">TV SHELT</a></li>
+                    <li class="  border-b-2 border-solid p-2"><a class="category_link" href="table.html">BÀN GHẾ</a></li>
+                    <li class="  border-b-2 border-solid p-2"><a class="category_link" href="sofa.html">BÀN GHẾ SOFA</a></li>
+                    <li class="  border-b-2 border-solid p-2"><a class="category_link" href="tivi.html">KỆ TIVI</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="mb-5 mt-5 text-2xl ">PRODUCT</h3>
                 <ul>
                     <li class="flex gap-4 items-center mb-3">
-                        <a href=""><img class="w-16 h-16" src="./../img/ke_tivi/tivi.jpg" alt=""></a>
+                        <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi.jpg" alt=""></a>
                         <div>
                             <h4 class="text-xl product-title"><a href="">Rosewood tv shelf</a></h4>
                             <strong>7,569,000 đ</strong>
                         </div>
                     </li>
                     <li class="flex gap-4 items-center mb-3">
-                        <a href=""><img class="w-16 h-16" src="./../img/ke_tivi/tivi1.jpg" alt=""></a>
+                        <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi1.jpg" alt=""></a>
                         <div>
                             <h4 class="text-xl product-title"><a href="">Natural wood TV shelf KTV91</a></h4>
                             <strong>5,050,000 ₫</strong>
                         </div>
                     </li>
                     <li class="flex gap-4 items-center mb-3">
-                        <a href=""><img class="w-16 h-16" src="./../img/ke_tivi/tivi2.jpg" alt=""></a>
+                        <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi2.jpg" alt=""></a>
                         <div>
                             <h4 class="text-xl product-title"><a href="">TV shelf for living room KTV96</a></h4>
                             <strong>4,759,000 ₫</strong>
                         </div>
                     </li>
                     <li class="flex gap-4 items-center mb-3">
-                        <a href=""><img class="w-16 h-16" src="./../img/ke_tivi/tivi3.jpg" alt=""></a>
+                        <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi3.jpg" alt=""></a>
                         <div>
                             <h4 class="text-xl product-title"><a href="">Xoan wooden dining table and chairs set</a></h4>
                             <strong>7,564,000 ₫</strong>

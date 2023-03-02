@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 
 class LayoutController extends Controller
 {
-    public function about()
+    public function home()
     {
-        return view('layout.about');
+        return view('layout.home');
     }
 }

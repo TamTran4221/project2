@@ -46,7 +46,7 @@
                     <h3 class="mb-5 mt-5 text-2xl ">PRODUCT</h3>
                     <ul>
                         <li class="flex gap-4 items-center mb-3">
-                            <a href=""><img class="w-16 h-16" src="/template/layout/img/ke_tivi/tivi.jpg"
+                            <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi.jpg"
                                     alt=""></a>
                             <div>
                                 <h4 class="text-xl product-title"><a href="">Rosewood tv shelf</a></h4>
@@ -54,7 +54,7 @@
                             </div>
                         </li>
                         <li class="flex gap-4 items-center mb-3">
-                            <a href=""><img class="w-16 h-16" src="/template/layout/img/ke_tivi/tivi1.jpg"
+                            <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi1.jpg"
                                     alt=""></a>
                             <div>
                                 <h4 class="text-xl product-title"><a href="">Natural wood TV shelf KTV91</a></h4>
@@ -62,7 +62,7 @@
                             </div>
                         </li>
                         <li class="flex gap-4 items-center mb-3">
-                            <a href=""><img class="w-16 h-16" src="/template/layout/img/ke_tivi/tivi2.jpg"
+                            <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi2.jpg"
                                     alt=""></a>
                             <div>
                                 <h4 class="text-xl product-title"><a href="">TV shelf for living room KTV96</a></h4>
@@ -70,7 +70,7 @@
                             </div>
                         </li>
                         <li class="flex gap-4 items-center mb-3">
-                            <a href=""><img class="w-16 h-16" src="/template/layout/img/ke_tivi/tivi3.jpg"
+                            <a href=""><img class="w-16 h-16" src="/template/layout//img/ke_tivi/tivi3.jpg"
                                     alt=""></a>
                             <div>
                                 <h4 class="text-xl product-title"><a href="">Xoan wooden dining table and chairs
@@ -86,7 +86,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(&quot;/template/layout/img/sofa/sofa1.jpg&quot;);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa1.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -102,7 +102,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(&quot;/template/layout/img/sofa/sofa2.jpg&quot;);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa2.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -118,7 +118,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(&quot;/template/layout/img/sofa/sofa3.jpg&quot;);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa3.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -134,7 +134,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(&quot;/template/layout/img/sofa/sofa4.jpg&quot;);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa4.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -150,7 +150,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(/template/layout/img/sofa/sofa5.jpg);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa5.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -166,7 +166,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(/template/layout/img/sofa/sofa6.jpg);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa6.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -182,7 +182,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(/template/layout/img/sofa/sofa7.jpg);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa7.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -198,7 +198,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(/template/layout/img/sofa/sofa8.jpg);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa8.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
@@ -214,7 +214,7 @@
                     <div class="product_item">
                         <a href="sofa-detail.html">
                             <div class="product_sofa "
-                                style="background-image: url(/template/layout/img/sofa/sofa9.jpg);"></div>
+                                style="background-image: url(/template/layout//img/sofa/sofa9.jpg);"></div>
                         </a>
                         <a class="product_link" href="">
                             <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>

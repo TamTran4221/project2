@@ -20,8 +20,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.new');
+    return view('layout.table');
 });
+Route::get('/home',[LayoutController::class,'home']);
+Route::get('/about',[LayoutController::class,'about']);
+Route::get('/new',[LayoutController::class,'new']);
+Route::get('/contact',[LayoutController::class,'contact']);
 
 Route::get('/admin',[LoginController::class,'index'])->name('login');
 Route::post('/admin',[LoginController::class,'store'])->name('login.store');
