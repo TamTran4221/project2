@@ -166,8 +166,6 @@
                         <strong>13,576,000 đ</strong>
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>
