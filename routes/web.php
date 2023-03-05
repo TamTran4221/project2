@@ -1,6 +1,4 @@
 <?php
-
-<<<<<<< HEAD
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CategoryController;
@@ -8,8 +6,6 @@ use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use Faker\Guesser\Name;
-=======
->>>>>>> 2ea2d36946036c4e651120a3ba52ad6c14266420
 use Illuminate\Support\Facades\Route;
 
 // use controller admin
@@ -36,8 +32,6 @@ use App\Http\Controllers\CartController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-<<<<<<< HEAD
 Route::get('/',function(){
   return view('layout.home', ['title'=> "Trang chủ"]);
 });
@@ -60,24 +54,3 @@ Route::post('/admin',[LoginController::class,'store'])->name('login.store');
   Route::resource('admin/home/product', ProductController::class);
   Route::resource('admin/home/blog', BlogController::class);
 });
-=======
-// view frontend
-Route::get('/',[HomeController::class, 'index'])->name('view.home');
-Route::get('/collection/all',[CategoryController::class, 'index'])->name('view.collection');
-Route::get('/cart/add/{pro_id}/{cus_id}',[CartController::class, 'add'])->name('view.cart.add');
-
-// login admin
-Route::get('/admin',[AdminLoginController::class,'index'])->name('login');
-Route::post('/admin',[AdminLoginController::class,'store'])->name('login.store');
-
-// view admin
-Route::name('admin.')->prefix('/admin')->middleware(['auth'])->group(function(){
-
-  Route::get('/home',[AdminController::class,'index'])->name('home');
-  Route::resource('/home/category', AdminCategoryController::class);
-  Route::resource('/home/product', AdminProductController::class);
-  Route::resource('/home/blog', AdminBlogController::class);
-  Route::resource('/home/user', AdminUserController::class);
-  Route::resource('/home/role', AdminRoleController::class);
-});
->>>>>>> 2ea2d36946036c4e651120a3ba52ad6c14266420
