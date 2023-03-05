@@ -6,17 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class Product extends Model
+class Role extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'name', 'price', 'description', 'image', 'category_id'
-    ];
 
-    public function category()
-    {
-        return $this->hasOne(Category::class,'id', 'category_id');
-    }
+    protected $fillable = [
+        'id', 'name', 'user_id'
+    ];
 
     public function scopeSearchFilter($query)
     {
@@ -40,6 +36,11 @@ class Product extends Model
         return $query;
     }
 
+    public function getAll()
+    {
+        return $this->all();
+    }
+
     public function getDataIndex($i = 10)
     {
         return $this->searchFilter()->paginate($i);
@@ -50,38 +51,17 @@ class Product extends Model
         return $this->find($id);
     }
 
-    public function getProductByCatId($id)
+    public function add(Request $data)
     {
-        return $this->where('category_id', $id)->searchFilter()->paginate(8);
-    }
-
-    public function add(Request $data, $id = '')
-    {
-        if ( $id == '') {
-            if($data->hasFile('file')){
-                $file = $data->file;
-                $fileName = $file->getClientOriginalName();
-               
-                $file->move(public_path('uploads'),$fileName);
-                $data->merge(['image'=>$fileName]);
-            }
+        if ( $data->id == '') {
             $this->create($data->all());
         } else {
-            $product = $this->getProductById($id);
-            if($data->hasFile('file')){
-                $file = $data->file;
-                $file_name =  $file->getClientOriginalName();
-                $file->move(public_path('uploads'),$file_name);
-            } else {
-                $file_name = $product->image;
-            }
-            $data->merge(['image'=>$file_name]);
-            $product->update($data->all());
+            $this->find($data->id)->update($data->all());
         }
     }
 
     public function remove($id)
     {
-        return  $this->getProductById($id)->delete();
+        return  $this->find($id)->delete();
     }
 }

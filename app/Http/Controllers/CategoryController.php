@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -14,6 +15,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
         $cates = Category::orderBy('created_at','DESC')->paginate(5)->withQueryString();
         return view('/admin/category.index',compact('cates'),['title'=>'Danh sách danh mục']);
     }
@@ -42,6 +44,17 @@ class CategoryController extends Controller
     
 
     /**
+=======
+        $categories = Category::orderBy('created_at', 'DESC')->get();
+        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        return view('layout.', [
+            'products' => $products,
+            'category' => $categories
+        ]);
+    }
+
+    /**
+>>>>>>> 2ea2d36946036c4e651120a3ba52ad6c14266420
      * Display the specified resource.
      *
      * @param  int  $id
@@ -49,45 +62,13 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        $cate = Category::find($id);
-
-        return view('/admin/category.edit',compact('cate'),['title'=> 'Chỉnh sửa danh mục']);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $cate = Category::find($id);
-        $cate->update($request->all());
-        return redirect()->route('category.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        $cate = Category::find($id)->delete();
-        return redirect()->back();
+        $categories = Category::orderBy('created_at', 'DESC')->get();
+        $category = Category::where('id', $id)->first();
+        $products = $category->products()->orderBy('created_at')->paginate(12);
+        return view('category.product', [
+            'products' => $products,
+            'category' => $category,
+            'list_categories' => $categories
+        ]);
     }
 }

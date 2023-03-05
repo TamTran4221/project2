@@ -35,27 +35,36 @@
                             <thead>
                                 <tr>
                                     <th>STT</th>
+                                    <th>Avatar</th>
                                     <th>Name</th>
-                                    <th> Price</th>
-                                    <th>Image</th>
-                                    <th>Description</th>
-                                    <th>Category</th>
+                                    <th>Email</th>
+                                    <th>role</th>
+                                    <th>Created At</th>
+                                    <th>Updated At</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($products as $value)
+                                @foreach ($users as $value)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+                                        <td><img src="{{url('uploads')}}/{{ ($value->avatar != '')? $value->avatar: 'default_user.png'; }}" alt="Avatar" width="40px"></td>
                                         <td>{{ $value->name }}</td>
-                                        <td>{{ $value->price }}</td>
-                                        <td><img src="{{url('uploads')}}/{{$value->image}}" alt="" width="100px"></td>
-                                        <td>{{ $value->description }}</td>
-                                        <td>{{ $value->category->name}}</td>
+                                        <td>{{ $value->email }}</td>
+                                        <td><?php if ($value->role == 0) {
+                                               echo 'Người quản trị';
+                                            } else if ($value->role == 1) {
+                                                echo 'Khách Hàng';
+                                            } else {
+                                                echo 'Cộng tác viên';
+                                            } ?>
+                                       </td>
+                                        <td>{{ $value->created_at }}</td>
+                                        <td>{{ $value->updated_at }}</td>
                                         <td>
-                                            <a href="{{ route('admin.product.edit', $value) }}" class="btn btn-primary">Edit</a>
+                                            <a href="{{ route('admin.user.edit', $value) }}" class="btn btn-primary">Edit</a>
                                         </td>
                                         <td>
-                                            <form action="{{ route('admin.product.destroy', $value) }}" method="POST"
+                                            <form action="{{ route('admin.user.destroy', $value) }}" method="POST"
                                                 onsubmit="return confirm('Bạn thực sự muốn xóa sản phẩm này?')">
                                                 @csrf
                                                 @method('DELETE')
@@ -67,7 +76,7 @@
                             </tbody>
                         </table>
                         
-                        {{ $products->links() }}
+                        {{ $users->links() }}
                     </div>
             </div>  
         </div>

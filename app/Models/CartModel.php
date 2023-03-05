@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
-class Product extends Model
+class CartModel extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'price', 'description', 'image', 'category_id'
+        'id', 'customer_id', 'date_placed'
     ];
 
-    public function category()
+    public function customer()
     {
-        return $this->hasOne(Category::class,'id', 'category_id');
+        return $this->hasOne(Customer::class,'id', 'category_id');
     }
 
     public function scopeSearchFilter($query)
@@ -50,38 +50,18 @@ class Product extends Model
         return $this->find($id);
     }
 
-    public function getProductByCatId($id)
-    {
-        return $this->where('category_id', $id)->searchFilter()->paginate(8);
-    }
-
     public function add(Request $data, $id = '')
     {
         if ( $id == '') {
-            if($data->hasFile('file')){
-                $file = $data->file;
-                $fileName = $file->getClientOriginalName();
-               
-                $file->move(public_path('uploads'),$fileName);
-                $data->merge(['image'=>$fileName]);
-            }
             $this->create($data->all());
         } else {
-            $product = $this->getProductById($id);
-            if($data->hasFile('file')){
-                $file = $data->file;
-                $file_name =  $file->getClientOriginalName();
-                $file->move(public_path('uploads'),$file_name);
-            } else {
-                $file_name = $product->image;
-            }
-            $data->merge(['image'=>$file_name]);
-            $product->update($data->all());
+            $cart = $this->getById($id);
+            $cart->update($data->all());
         }
     }
 
     public function remove($id)
     {
-        return  $this->getProductById($id)->delete();
+        return  $this->getById($id)->delete();
     }
 }

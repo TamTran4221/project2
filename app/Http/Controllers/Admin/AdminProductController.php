@@ -1,13 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
-class ProductController extends Controller
+class AdminProductController extends Controller
 {
+
     private $product;
     private $category;
 
@@ -27,7 +29,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = $this->product->getDataIndex($i = 10);
-        return view('admin.product.index', compact('products'));
+        return view('admin.product.index', compact('products'),['title'=>'danh sách sản phẩm']);
     }   
 
     /**
@@ -37,8 +39,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $cate = $this->category->getAll();
-        return view('admin/product.add',compact('cate'),['title'=> 'thêm mới sản phẩm']);
+        $cate = $this->category->getDataIndex($i = 10);
+        return view('admin.product.add',compact('cate'),['title'=> 'thêm mới sản phẩm']);
     }
 
     /**
@@ -49,21 +51,8 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-        if($request->hasFile('file')){
-            $file = $request->file;
-            $fileName = $file->getClientOriginalName();
-           
-            $file->move(public_path('uploads'),$fileName);
-            $request->merge(['image'=>$fileName]);
-        }
-        Product::create($request->all());
-        return redirect()->route('product.index')->with('success','Thêm mới sản phẩm thành công');
-=======
         $this->product->add($request);
         return redirect()->route('product.index');
->>>>>>> 2ea2d36946036c4e651120a3ba52ad6c14266420
-        
     }
 
     /**
@@ -74,9 +63,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $this->product->getProductByCatId($id);
+        $this->product->getById($id);
         $this->category->getAll();
-        return view('admin/product.edit',compact('product','cate'), ['title' =>'Chỉnh Sửa sản phẩm']);
+        return view('admin.product.edit',compact('product','cate'), ['title' =>'Chỉnh Sửa sản phẩm']);
     }
 
     /**
