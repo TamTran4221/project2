@@ -19,9 +19,13 @@
 
 
         @yield('content')
+        <!-- ./wrapper -->
     <script src="/template/admin/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="/template/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap Switch -->
+    <script src="/template/admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    
     <!-- AdminLTE App -->
     <script src="/template/admin/dist/js/adminlte.min.js"></script>
 

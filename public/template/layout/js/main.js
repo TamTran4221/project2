@@ -1,38 +1,38 @@
 var banner = [
-    "./../img/banner/banner_1.jpg",
-    "./../img/banner/banner_2.jpg"
+    "/template/layout/img/banner/banner_1.jpg",
+    "/template/layout/img/banner/banner_2.jpg"
 ];
 var sofaImg = [
-    "./../img/sofa/sofa1.jpg",
-    "./../img/sofa/sofa2.jpg",
-    "./../img/sofa/sofa3.jpg",
-    "./../img/sofa/sofa4.jpg",
-    "./../img/sofa/sofa5.jpg",
-    "./../img/sofa/sofa6.jpg",
-    "./../img/sofa/sofa7.jpg",
-    "./../img/sofa/sofa8.jpg",
-    "./../img/sofa/sofa9.jpg",
+    "/template/layout/img/sofa/sofa1.jpg",
+    "/template/layout/img/sofa/sofa2.jpg",
+    "/template/layout/img/sofa/sofa3.jpg",
+    "/template/layout/img/sofa/sofa4.jpg",
+    "/template/layout/img/sofa/sofa5.jpg",
+    "/template/layout/img/sofa/sofa6.jpg",
+    "/template/layout/img/sofa/sofa7.jpg",
+    "/template/layout/img/sofa/sofa8.jpg",
+    "/template/layout/img/sofa/sofa9.jpg",
 ]
 
 var tiviImg = [
-    "./../img/ke_tivi/tivi1.jpg",
-    "./../img/ke_tivi/tivi2.jpg",
-    "./../img/ke_tivi/tivi3.jpg",
-    "./../img/ke_tivi/tivi.jpg",
-    "./../img/ke_tivi/tivi5.jpg",
-    "./../img/ke_tivi/tivi6.jpg",
+    "/template/layout/img/ke_tivi/tivi1.jpg",
+    "/template/layout/img/ke_tivi/tivi2.jpg",
+    "/template/layout/img/ke_tivi/tivi3.jpg",
+    "/template/layout/img/ke_tivi/tivi.jpg",
+    "/template/layout/img/ke_tivi/tivi5.jpg",
+    "/template/layout/img/ke_tivi/tivi6.jpg",
 ]
 
 var tableImg = [
-    "./../img/table/table1.jpg",
-    "./../img/table/table2.jpg",
-    "./../img/table/table3.jpg",
-    "./../img/table/table4.jpg",
-    "./../img/table/table5.jpg",
-    "./../img/table/table6.jpg",
-    "./../img/table/table7.jpg",
-    "./../img/table/table8.jpg",
-    "./../img/table/table9.jpg",
+    "/template/layout/img/table/table1.jpg",
+    "/template/layout/img/table/table2.jpg",
+    "/template/layout/img/table/table3.jpg",
+    "/template/layout/img/table/table4.jpg",
+    "/template/layout/img/table/table5.jpg",
+    "/template/layout/img/table/table6.jpg",
+    "/template/layout/img/table/table7.jpg",
+    "/template/layout/img/table/table8.jpg",
+    "/template/layout/img/table/table9.jpg",
 ]
 var table = document.querySelectorAll('.product_table');
 var sofa = document.querySelectorAll('.product_sofa');

@@ -35,8 +35,7 @@
                     <i class="fa-solid fa-envelope"></i>
                 </div>
                 <h3 class="text-2xl">EMAIL</h3>
-                <p class="mt-7 mb-6">dinhcan355@gmail.com</p>
-                <p>tamanhtran473@gmail.com</p>
+                <h3> monasofa@gmail.com</h3>
             </div>
             <button class="button">CLICK ME!</button>
         </div>

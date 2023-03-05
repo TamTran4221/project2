@@ -47,14 +47,14 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $value->title }}</td>
                                         <td>{{ $value->content }}</td>
-                                        <td><img src="{{url('uploads')}}/{{$value->image}}" alt="" width="100px"></td>
+                                        <td><img src="{{url('uploads-blog')}}/{{$value->image}}" alt="" width="100px"></td>
                                         <td>{{ $value->status }}</td>
                                         <td>
                                             <a href="{{ route('blog.edit', $value) }}" class="btn btn-primary">Edit</a>
                                         </td>
                                         <td>
                                             <form action="{{ route('blog.destroy', $value) }}" method="POST"
-                                                onsubmit="return confirm('Bạn thực sự muốn xóa sản phẩm này?')">
+                                                onsubmit="return confirm('Bạn thực sự muốn xóa bài viết này?')">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger">DELETE</button>
@@ -65,7 +65,7 @@
                             </tbody>
                         </table>
                         
-                        {{-- {{ $blogs->links() }} --}}
+                        {{ $blogs->links() }}
                     </div>
             </div>  
         </div>

@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $cates = Category::orderBy('created_at', 'DESC')->paginate(5);
+        $cates = Category::orderBy('created_at','DESC')->paginate(5)->withQueryString();
         return view('/admin/category.index',compact('cates'),['title'=>'Danh sách danh mục']);
     }
 
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $cate = Category::create($request->all());
-        return redirect()->route('category.index');
+        return redirect()->route('category.index')->with('success','Thêm mới danh mục thành công');
     }
     
 

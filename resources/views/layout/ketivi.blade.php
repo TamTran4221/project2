@@ -2,12 +2,12 @@
 @section('layout')
 <div class="container lg:w-11/12 w-full lg:mx-auto mx-0 mt-14">
     <!-- content header -->
-    <div class="flex justify-between">
+    <div class="flex justify-between lg:ml-0 ml-8">
         <div class="lg:flex hidden gap-4">
-            <div class="text-2xl home uppercase"><a href="">Trang Chủ</a></div>
+            <div class="text-2xl home uppercase"><a href="">trang chủ</a></div>
             <div class="text-2xl">/</div>
             <div class="text-2xl uppercase">
-                SOFA
+                KỆ TIVI
             </div>
         </div>
         <div class="lg:mx-0 mx-auto">
@@ -25,7 +25,7 @@
 
     <!-- content body -->
     <div class="flex mt-8 gap-2">
-        <div class="category lg:block hidden w-3/12">
+        <div class="category lg:block hidden" style="max-width:24%">
             <div class="flex">
                 <input class="input-category" type="text" placeholder="Search ...">
                 <span class="input-category_icon">
@@ -52,32 +52,29 @@
                         </div>
                     </li>
                     @endforeach
-                    
-                  
                 </ul>
             </div>
         </div>
         <div class="product-sofa-table-tivi">
-            <div class="grid lg:grid-cols-3 grid-cols-2 gap-2">
+            <div class="grid lg:grid-cols-3 lg:gap-2 grid-cols-2">
+                
                 @foreach ($product as $value)
                 <div class="product_item">
-                    <a href="{{route('layout.detail')}}">
-                        <div class="product_sofa " ></div>
+                    <a href="">
+                        <div class="product_tivi "></div>
                     </a>
                     <a class="product_link" href="">
                         <i class="absolute -bottom-20 left-8 fa-solid fa-cart-plus lg:text-2xl lg:block hidden"></i>
                     </a>
                     <div class=" lg:mt-20 mt-2   mx-auto text-center">
-                        <p class="text-xs opacity-60">Ghế sofa</p>
-                        <a class="link_sofa" href="{{route('layout.detail')}}">
+                        <P class="text-xs opacity-60">KỆ TIVI</P>
+                        <a class="link_sofa" href="">
                             <h4>{{$value->name}}</h4>
                         </a>
-                        <strong>{{$value->price}} đ</strong>
+                        <strong>{{$value->price}}đ</strong>
                     </div>
                 </div>
                 @endforeach
-                
-
             </div>
         </div>
     </div>

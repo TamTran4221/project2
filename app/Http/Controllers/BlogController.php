@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::orderBy('created_at', 'DESC')->paginate(2);
         return view('admin/blog.index', compact('blogs'), ['title'=> 'Quản lý blog']);
     }
     public function create()
@@ -21,12 +21,12 @@ class BlogController extends Controller
         if($request->hasFile('file')){
             $file = $request->file;
             $fileName = $file->getClientOriginalName();
-            $file->move(public_path('uploads'),$fileName);
+            $file->move(public_path('uploads-blog'),$fileName);
             $request->merge(['image'=>$fileName]);
         }
     //    dd($request);
         Blog::create($request->all());
-        return redirect()->route('blog.index');
+        return redirect()->route('blog.index')->with('success','thêm mới Blog thành công');
         
     }
     public function edit($id)
@@ -41,7 +41,7 @@ class BlogController extends Controller
         if($request->hasFile('file')){
             $file = $request->file;
             $file_name =  $file->getClientOriginalName();
-            $file->move(public_path('uploads'),$file_name);
+            $file->move(public_path('uploads-blog'),$file_name);
         } else {
             $file_name = $blog->image;
         }

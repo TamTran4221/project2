@@ -46,7 +46,7 @@ class ProductController extends Controller
             $request->merge(['image'=>$fileName]);
         }
         Product::create($request->all());
-        return redirect()->route('product.index');
+        return redirect()->route('product.index')->with('success','Thêm mới sản phẩm thành công');
         
     }
 

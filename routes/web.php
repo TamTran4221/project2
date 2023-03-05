@@ -6,6 +6,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LayoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,13 +20,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.table');
+Route::get('/',function(){
+  return view('layout.home', ['title'=> "Trang chủ"]);
 });
-Route::get('/home',[LayoutController::class,'home']);
-Route::get('/about',[LayoutController::class,'about']);
-Route::get('/new',[LayoutController::class,'new']);
-Route::get('/contact',[LayoutController::class,'contact']);
+Route::get('/home',[LayoutController::class,'home'])->name('home');
+Route::get('/about',[LayoutController::class,'about'])->name('layout.about');
+Route::get('/news',[LayoutController::class,'news'])->name('layout.news');
+Route::get('/contact',[LayoutController::class,'contact'])->name('layout.contact');
+Route::get('/sofa',[LayoutController::class,'product'])->name('layout.product');
+Route::get('/table',[LayoutController::class,'table'])->name('layout.table');
+Route::get('/tivi',[LayoutController::class,'tivi'])->name('layout.tivi');
+Route::get('/detail',[LayoutController::class,'detail'])->name('layout.detail');
 
 Route::get('/admin',[LoginController::class,'index'])->name('login');
 Route::post('/admin',[LoginController::class,'store'])->name('login.store');
