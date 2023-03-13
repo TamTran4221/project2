@@ -202,6 +202,7 @@
 <script src="{{url('template/layout/js')}}/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="{{url('template/layout/js')}}/adminlte.min.js"></script>
+@yield('custom_js')
 </body>
 </html>
 

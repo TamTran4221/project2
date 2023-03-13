@@ -51,7 +51,7 @@ class AdminUserController extends Controller
     public function store(Request $request)
     {
         $this->user->add($request);
-        return redirect()->route('category.index');
+        return redirect()->route('admin.user.index');
     }
 
     /**
@@ -62,8 +62,9 @@ class AdminUserController extends Controller
      */
     public function edit($id)
     {
-        $cate = $this->user->getById($id);
-        return view('admin.category.edit',compact('cate'),['title'=> 'Chỉnh sửa danh mục']);
+        $role =  $this->role->getAll();
+        $user = $this->user->getById($id);
+        return view('admin.user.edit',compact('user','role'),['title'=> 'Chỉnh sửa tài khoản']);
     }
 
     /**
@@ -75,8 +76,11 @@ class AdminUserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->user->add($request, $id);
-        return redirect()->route('admin.category.index');
+        if ($this->user->add($request, $id)) {
+            return redirect()->route('admin.user.index');
+        } else {
+            return back()->withInput();
+        }
     }
 
     /**

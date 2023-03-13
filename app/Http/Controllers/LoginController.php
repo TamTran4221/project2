@@ -19,7 +19,6 @@ class LoginController extends Controller
     }
     public function store(Request $request) {
         
-       
         // Kiểm tra dữ liệu nhập vào
         $rules = [
             'email' =>'required|email',
@@ -31,7 +30,6 @@ class LoginController extends Controller
             'password.required' => 'Mật khẩu là trường bắt buộc'
         ];
         $validator = Validator::make($request->all(), $rules, $messages);
-        // dd($request->all());
         
         if ($validator->fails()) {
             // Điều kiện dữ liệu không hợp lệ sẽ chuyển về trang đăng nhập và thông báo lỗi
@@ -40,7 +38,6 @@ class LoginController extends Controller
             // Nếu dữ liệu hợp lệ sẽ kiểm tra trong csdl
             $email = $request->input('email');
             $password = $request->input('password');
-     
             if( Auth::attempt(['email' => $email, 'password' =>$password])) {
                 // Kiểm tra đúng email và mật khẩu sẽ chuyển trang
                 return redirect('admin/home');

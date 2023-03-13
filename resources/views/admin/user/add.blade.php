@@ -25,7 +25,6 @@
 <?php //Form thêm mớisản phẩm?>
     <div class="card-body">
         <div class="tab-description p-0">
-
             <form action="{{route('admin.user.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="input-group mb-3">
@@ -62,8 +61,10 @@
                         @endforeach
                       </select>
                 </div>
+                <span class="input-group-append mt-3">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </span>
             </form>
         </div>
     </div>
-
 @endsection

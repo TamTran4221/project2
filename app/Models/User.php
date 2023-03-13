@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class User extends Authenticatable
 {
@@ -22,6 +25,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role_id',
+        'avatar'
     ];
 
     /**
@@ -42,6 +47,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role()
+    {
+        return $this->hasOne(Role::class,'id', 'role_id');
+    }
 
     public function scopeSearchFilter($query)
     {
@@ -75,12 +85,42 @@ class User extends Authenticatable
         return $this->searchFilter()->paginate($i);
     }
 
-    public function add(Request $data, $id = '')
+    public function add(Request $data)
     {
-        if ( $id == '') {
+        $fileName = '';
+        if($data->hasFile('file')){
+            $file = $data->file;
+            $fileName = $file->getClientOriginalName();
+            $file->move(public_path('uploads'),$fileName);
+            $data->merge(['avatar'=>$fileName]);
+        } else {
+            $data->merge(['avatar'=>$fileName]);
+        }
+        if ( $data->id == '') {
+            $password = Hash::make($data->password);
+            $data->request->remove('password');
+            $data->merge(['password'=>$password]);
             $this->create($data->all());
         } else {
-            $this->find($id)->update($data->all());
+            if ($this->checkPass($data)) {
+                $data->request->remove('old_password');
+                $data->request->remove('password');
+                $data->merge(['password'=>Hash::make($data->confim_password)]);
+                $data->request->remove('confim_password');
+                $this->find($data->id)->update($data->all());
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public function checkPass($data)
+    {
+        if( Auth::attempt(['email' => $data->email, 'password' =>$data->old_password]) && ($data->password == $data->confim_password)) {
+            return true;
+        } else {
+            return false;
         }
     }
 

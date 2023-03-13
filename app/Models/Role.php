@@ -11,8 +11,13 @@ class Role extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id', 'name', 'user_id'
+        'id', 'name'
     ];
+
+    public function users()
+    {
+        return $this->hasMany(User::class, 'role_id', 'id');
+    }
 
     public function scopeSearchFilter($query)
     {

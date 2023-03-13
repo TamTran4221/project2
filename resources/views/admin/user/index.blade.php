@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-12">
                     <div class="card-body">
-                        <a href="{{route('admin.product.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới sản phẩm</a>
+                        <a href="{{route('admin.user.create')}}" class="btn btn-success" style="margin: 20px">Thêm mới Tài khoản</a>
                         <table id="example2" class="table table-bordered table-hover w-full">
                             <thead>
                                 <tr>
@@ -50,14 +50,7 @@
                                         <td><img src="{{url('uploads')}}/{{ ($value->avatar != '')? $value->avatar: 'default_user.png'; }}" alt="Avatar" width="40px"></td>
                                         <td>{{ $value->name }}</td>
                                         <td>{{ $value->email }}</td>
-                                        <td><?php if ($value->role == 0) {
-                                               echo 'Người quản trị';
-                                            } else if ($value->role == 1) {
-                                                echo 'Khách Hàng';
-                                            } else {
-                                                echo 'Cộng tác viên';
-                                            } ?>
-                                       </td>
+                                        <td>{{ $value->role->name}}</td>
                                         <td>{{ $value->created_at }}</td>
                                         <td>{{ $value->updated_at }}</td>
                                         <td>
